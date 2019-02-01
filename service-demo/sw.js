@@ -15,8 +15,7 @@ if('serviceWorker' in navigator){
 		event.waitUntil(
 			caches.open('my-test-cache-v1').then(function (cache){
 				return cache.addAll({
-					'/',
-	                '/index.html',
+					'/index.html',
 	                '/main.css',
 	                '/main.js',
 	                '/images.jpg'

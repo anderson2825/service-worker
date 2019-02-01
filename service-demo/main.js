@@ -1,1 +1,1 @@
-$("body").css('background-color','#f00');
+console.log('main.js');
