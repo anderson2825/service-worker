@@ -10,3 +10,4 @@ if('serviceWorker' in navigator){
 			console.log('serviceWorke registration successful with scope:',err);
 		});
 	});
+}
