@@ -21,9 +21,9 @@
 	 				 	var responseClone = response.clone();
 	 					caches.open('my-test-cache-v1').then(function (cache) {
 	 						cache.put(event.request,responseClone);
-	 					});
+	 					})
  						return response;
-					}); 	
+					})	
  				}
  			});
 		)	
