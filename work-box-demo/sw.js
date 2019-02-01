@@ -3,6 +3,8 @@ console.log('hello from sw.js');
 // 当然也可以挪到自己的 CDN 维护
 if('function' === typeof importScripts){
 	importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js');
+}else{
+	console.log('not find importScripts!');
 }
 
 if (workbox) {
