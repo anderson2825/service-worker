@@ -1,7 +1,8 @@
  if('serviceWorker' in navigator){
  	window.addEventListener('load' ,function () {
  		const prefix = location.pathname.replace(/\/(index\.html)?$/, '');
- 		navigator.serviceWorker.register(`${prefix}/sw.js`)
+ 		console.log(location.pathname,prefix);
+ 		navigator.serviceWorker.register('${prefix}/sw.js')
  		.then(function (registration) {
  			console.log('[success] scope',registration.scope);
  		},function (err) {
