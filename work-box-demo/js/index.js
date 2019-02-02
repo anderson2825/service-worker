@@ -2,7 +2,7 @@
  	window.addEventListener('load' ,function () {
  		const prefix = location.pathname.replace(/\/(index\.html)?$/, '');
  		console.log(location.pathname,prefix);
- 		navigator.serviceWorker.register(`${prefix}/sw.js`)
+ 		navigator.serviceWorker.register('${prefix}/sw.js')
  		.then(function (registration) {
  			console.log('[success] scope',registration.scope);
  		},function (err) {
