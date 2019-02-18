@@ -2,15 +2,15 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v1').then(function(cache) {
       return cache.addAll([
-        '/serivce-demo/',
-        '/serivce-demo/index.html',
-        '/serivce-demo/style.css',
-        '/serivce-demo/app.js',
-        '/serivce-demo/image-list.js',
-        '/serivce-demo/images_pro.jpg',
-        '/serivce-demo/images/a1.jpg',
-        '/serivce-demo/images/a2.jpg',
-        '/serivce-demo/images/a3.jpg'
+        '/service-demo/',
+        '/service-demo/index.html',
+        '/service-demo/style.css',
+        '/service-demo/app.js',
+        '/service-demo/image-list.js',
+        '/service-demo/images_pro.jpg',
+        '/service-demo/images/a1.jpg',
+        '/service-demo/images/a2.jpg',
+        '/service-demo/images/a3.jpg'
       ]);
     })
   );
