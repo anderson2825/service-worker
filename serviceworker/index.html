@@ -3,20 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
-	<!-- <script src="sw.js" type="text/javascript"></script> -->
+	 
 </head>
 <body>
-<script>
-// Check that service workers are registered
-if ('serviceWorker' in navigator) {
-  // Use the window load event to keep the page load performant
-	window.addEventListener('load', () => {
-		navigator.serviceWorker.register('sw.js');
-		 //.then(reg => console.log('Service worker registered successfully!'))
-         //.catch(err => console.log('Service worker failed to register!'));
-	});
-}
-</script>	
+   <h1>
+      Testing Loading of Workbox via CDN
+    </h1>
+    <p>
+      This page will register a service worker that uses the Workbox CDN.
+    </p>
 </body>
+	<script>navigator.serviceWorker.register('sw.js');</script>	
 </html>
