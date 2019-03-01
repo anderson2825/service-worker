@@ -7,3 +7,12 @@ if (workbox) {
 else {
     console.log(`Boo! workbox didn't load 😬`);
 }
+
+workbox.precaching.preacheAndRoute([
+    '/style/test.css',
+    '/script/test.js',
+    {
+        url: '/index.html',
+        revision: '383676'
+    },
+]);
