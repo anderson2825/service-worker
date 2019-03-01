@@ -8,10 +8,15 @@ else {
     console.log(`Boo! workbox didn't load 😬`);
 }
 
-workbox.precaching.preacheAndRoute([
+workbox.routing.registerRoute(
+  new RegExp('.*\.js'),
+  new workbox.strategies.NetworkFirst()
+);
+
+/*workbox.precaching.preacheAndRoute([
     '/style/test.css',
    	{
         url:'/index.html',
         revision: '383676',
     },
-]);
+]);*/
