@@ -9,10 +9,10 @@ else {
 }
 
 workbox.precaching.preacheAndRoute([
-    '/style/test.css',
-    '/script/test.js',
+    '/serviceworker/style/test.css',
+    '/serviceworker/script/test.js',
     {
-        url: '/index.html',
+        url:'/serviceworker/index.html',
         revision: '383676'
     },
 ]);
