@@ -21,8 +21,8 @@
 	workbox.precaching.precacheAndRoute([
 		'./css/test.aa1.css',
 		{
-			url:'/test.html',
-			revision:'as45',
+			url:'/example.html',
+			revision:'6821e0'
 		}
 	])
 
