@@ -9,5 +9,12 @@
 	workbox.routing.registerRoute(
 		new RegExp('.*\.js'),
 		new workbox.strategies.NetworkFirst()
+	);
+
+	workbox.routing.registerRoute(
+		/\.css$/,
+		new workbox.strategies.StaleWhileRevalidate({
+			cacheNmae:'css-cache',
+		})
 	)
  
