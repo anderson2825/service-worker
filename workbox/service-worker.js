@@ -16,5 +16,15 @@
 		new workbox.strategies.StaleWhileRevalidate({
 			cacheNmae:'css-cache',
 		})
-	)
+	);
+
+	workbox.precaching.precacheAndRoute([
+		'./css/test.aa1.css',
+		{
+			url:'/index.html',
+			revision:'as45',
+		}
+		])
+
+
  
