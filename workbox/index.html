@@ -10,7 +10,6 @@
 <body>
 	<script>
 		if('serviceWorker' in navigator){
-			alert(12121);
 			window.addEventListener('load',()=>{
 				navigator.serviceWorker.register('service-worker.js');
 			})
