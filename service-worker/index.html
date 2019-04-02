@@ -11,7 +11,7 @@
 <body>
 	<script>
 		if('serviceWorker' in navigator ){
-			window.addEventLinstenter('load',function() {
+			window.addEventListener('load',function() { 
 				navigator.serviceWorker.register('/sw.js').then(function(registration){
 					console.log('serviceWorker registration successful with scope',registration.scope);
 				},function(err) {
