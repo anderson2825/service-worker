@@ -15,7 +15,7 @@ self.addEventListener('fetch',function(event) {
 			if(response){
 				return response;
 			}
-
+			console.log(event.response);
 			return fetch(event.request).then(function(response){
 				if(!response || response.status !=200 || response.type!== 'basic'){
 					return response;
