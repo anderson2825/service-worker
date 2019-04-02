@@ -1,30 +1,10 @@
-window.addEventListener('load',function() {
-	const sw = window.navigator.serviceWorker
-	const killSw = window.killSw || false
-	if(!sw){
-		return 
-	}
-
-	if(!!killSw){
-		sw.getRegistration('/serviceWorker').then(registration=>{
-			//手动注销
-			registration.unregister();
-			//清除缓存
-			window.caches && caches.key && caches.keys().then(function(keys){
-				keys.forEach(function(key){
-					caches.delete(key);
-				})
-			})
+var  precache = 'precache-v1';
+var  urlsTocache = ['/','/style/main.css','/script/main.js'];
+self.addEventListener('install',function(event) {
+	event.waitUntil(
+		caches.open(precache).then(function(cache) {
+			console.log('opened cache');
+			return cache.addAll(urlsTocache);
 		})
-	}else{
-		//表示该sw 监听的是根域名下的请求
-
-		sw.register('/serviceWorker.js',{scope:'/'}).then(registration=>{
-			console.log('Registered events at scope:',registration.scope);
-		}).catch(err=>{
-			console.log(err);
-		})
-	}
-
-
+	)
 })
