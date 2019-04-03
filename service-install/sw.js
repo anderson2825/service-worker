@@ -10,9 +10,10 @@ self.addEventListener('install',function(event) {
 })
 
 self.addEventListener('fetch',function(event) {
+  console.log(event.request.url,cacheStorageKey);
   event.respondWith(
     caches.match(event.request).then(function(response) {
-      console.log(event.response);
+
 /*      if(response){
         return response;
       }else{
