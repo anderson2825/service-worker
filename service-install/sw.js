@@ -14,6 +14,7 @@ self.addEventListener('fetch',function(event) {
     cache.match(event.request).then(function(response) {
       if(response){
         return response;
+         console.log(response);
       }
       return fetch(event.request).then(function(response){
         if(!response || response.status !=200 || response.type!== 'basic'){
@@ -34,7 +35,6 @@ self.addEventListener('activate',function(event){
   var cacheWhiteList = ['precache-v1','precache-v2'];
   event.waitUntil(
     caches.keys().then(function(cacheNames){
-      console.log(cacheNames);
       return Promise.all(
         cacheNames.map(function(cacheName){
           if(cacheWhiteList.indexOf(cacheName)=== -1){
