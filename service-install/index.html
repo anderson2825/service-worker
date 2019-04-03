@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
+	<link rel="stylesheet" href="style/main.css">
+	<script src="script/main.js" type="text/javascript"></script>
+</head>
+<body>
+	<script>
+		if('serviceWorker' in navigator ){
+			window.addEventListener('load',function() { 
+				navigator.serviceWorker.register('sw.js',{scope:'./en/'}).then(function(registration){
+					console.log('serviceWorker registration successful with scope',registration.scope);
+				}).catch(function(err) {
+					console.log('serviceWorker registration failed',err);	 
+				})
+			})
+		}else{
+			 console.log('Browser not support Service Worker.');
+		}
+
+	</script>
+</body>
+</html>
