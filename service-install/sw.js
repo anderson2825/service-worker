@@ -12,11 +12,11 @@ self.addEventListener('install',function(event) {
 self.addEventListener('fetch',function(event) {
   event.respondWith(
     caches.match(event.request).then(function(response) {
-      if(response){
+      if(response !==undefined){
         return response;
-      }
-      console.log(event.response);
-      return fetch(event.request).then(function(response){
+      }else{
+        console.log(event.response);
+        return fetch(event.request).then(function(response){
         if(!response || response.status !=200 || response.type!== 'basic'){
           return response;
         }
@@ -26,7 +26,8 @@ self.addEventListener('fetch',function(event) {
           cache.put(event.request,responseToCache);
         })
         return response;
-      })
+        })
+      }
     })
   )
 })
@@ -43,7 +44,6 @@ self.addEventListener('activate',function(event){
           }
         })
       )
-
     })
   )
 })
