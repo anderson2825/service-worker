@@ -1,4 +1,4 @@
-var version='v1'
+var version='v1';
 self.addEventListener('install',function(event) {
 	event.waitUntil(
 		caches.open('version').then(function(cache){
