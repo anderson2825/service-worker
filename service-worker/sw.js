@@ -31,7 +31,7 @@ self.addEventListener('fetch',function(event) {
 	)
 })
 
-self.addEventListener('actived',function(event){
+self.addEventListener('activate',function(event){
 	var cacheWhiteList = ['precache-v1','precache-v2'];
 	event.waitUntil(
 		caches.keys().then(function(cacheNames){
