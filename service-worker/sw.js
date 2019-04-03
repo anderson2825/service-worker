@@ -29,5 +29,20 @@ self.addEventListener('fetch',function(event) {
 			})
 		})
 	)
-	// body...
+})
+
+self.addEventListener('actived',function(event){
+	var cacheWhiteList = ['precache-v1','precache-v2'];
+	event.waitUntil(
+		caches.keys().then(function(cacheNames){
+			return Promise.all(
+				cacheNames.map(function(cacheName){
+					if(cacheWhiteList.indexOf(cacheName)=== -1){
+						return cache.delete(cacheName);
+					}
+				})
+			)
+
+		})
+	)
 })
