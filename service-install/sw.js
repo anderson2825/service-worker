@@ -3,12 +3,12 @@ self.addEventListener('install',function(event) {
 	event.waitUntil(
 		caches.open(version).then(function(cache){
 	   return cache.addAll([
-				'./service-install/',
-				'./service-install/en/image/ban1.jpg',
-				'./service-install/en/image/ban2.jpg',
-				'./service-install/en/image/ban3.jpg',
-				'./service-install/en/script/main.js',
-				'./service-install/en/style/main.css'
+				'/service-install/',
+				'/service-install/en/image/ban1.jpg',
+				'/service-install/en/image/ban2.jpg',
+				'/service-install/en/image/ban3.jpg',
+				'/service-install/en/script/main.js',
+				'/service-install/en/style/main.css'
 			]);
 		})
 	)
@@ -44,7 +44,7 @@ self.addEventListener('fetch', function(event) {
           })
           return response;
         }).catch(function(){
-          return caches.match('./service-install/en/image/ban3.jpg');
+          return caches.match('/service-install/en/image/ban3.jpg');
         })
       }
     })
