@@ -10,13 +10,12 @@ self.addEventListener('install',function(event) {
 })
 
 self.addEventListener('fetch',function(event) {
-  console.log('event.request.urlcacheStorageKey');
+  console.log(event.request.url,cacheStorageKey);
    event.respondWith(
     caches.match(event.request).then(function(response) {
       if(response){
         return response;
       }
-      console.log(response);
       return fetch(event.request).then(function(response){
         if(!response || response.status !=200 || response.type!== 'basic'){
           return response;
