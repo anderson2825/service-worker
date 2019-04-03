@@ -44,7 +44,7 @@ self.addEventListener('fetch', function(event) {
           })
           return response;
         }).catch(function(){
-          return caches.match('en/image/ban3.jpg');
+          return caches.match('./service-install/en/image/ban3.jpg');
         })
       }
     })
