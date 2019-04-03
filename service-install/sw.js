@@ -10,15 +10,15 @@ self.addEventListener('install',function(event) {
 })
 
 self.addEventListener('fetch',function(event) {
-  console.log(event.request.url,cacheStorageKey);
-   event.respondWith(
-    caches.match(event.request).then(function(response) {
+  event.respondWith(
+    cache.match(event.request).then(function(response) {
       if(response){
         return response;
       }
       return fetch(event.request).then(function(response){
         if(!response || response.status !=200 || response.type!== 'basic'){
           return response;
+          console.log(response);
         }
         var responseToCache = response.clone();
         caches.open(precache).then(function(cache){
