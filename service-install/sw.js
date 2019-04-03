@@ -1,6 +1,6 @@
 var version='v1'
 self.addEventListener('install',function(event) {
-	event.waitUntill(
+	event.waitUntil(
 		caches.open(version).then(function(cache){
 			cache.addAll([
 				'/en/',
