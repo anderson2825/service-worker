@@ -1,7 +1,7 @@
 var version='v1'
 self.addEventListener('install',function(event) {
 	event.waitUntil(
-		caches.open(version).then(function(cache){
+		caches.open('version').then(function(cache){
 			cache.addAll([
 				'/en/',
 				'/en/image/ban1.jpg',
