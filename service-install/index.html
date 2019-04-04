@@ -14,7 +14,22 @@
 	<script>
 		if('serviceWorker' in navigator ){
 			window.addEventListener('load',function() { 
-				navigator.serviceWorker.register('sw.js',{scope:'./en/'}).then(function(registration){
+				navigator.serviceWorker.register('sw.js',{scope:'./'}).then(function(registration){
+					if(registration.installing){
+						serviceWorker = registration.installing;
+						console.log("installing")
+					}else if(registration.waiting){
+						serviceWorker = registration.waiting;
+						console.log("waiting");
+					}else if(registration.active){
+						serviceWorker = registration.active;
+						console.log("actived");
+					}
+					if(serviceWorker){
+						serviceWorker.addEventListener('statechange',function(e){
+							console.log(e.target.state);
+						})
+					}
 					console.log('serviceWorker registration successful with scope',registration.scope);
 				}).catch(function(err) {
 					console.log('serviceWorker registration failed',err);	 
