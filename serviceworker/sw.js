@@ -14,7 +14,7 @@ self.addEventListener('install',function(event) {
       })
     }).catch(function(error){
       console.error('prefetch failed',error);
-    });
+    })
     self.skipWaiting();
   )
 })
