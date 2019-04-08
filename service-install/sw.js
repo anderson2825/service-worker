@@ -1,10 +1,19 @@
-var  precache = 'precache-v1';
-var  urlsTocache = ['','en/image/ban1.jpg','en/image/ban2.jpg','en/image/ban3.jpg'];
-self.addEventListener('install',function(event) { 
+var cache_version = 1;
+var current_caches = {
+  prefetch:'prefetch-cache-v' + cache_version;
+}
+
+self.addEventListener('install',function(event) {
+  var  urlsTocache = ['','en/image/ban1.jpg','en/image/ban2.jpg','en/image/ban3.jpg'];
   event.waitUntil(
-    caches.open(precache).then(function(cache) {
-      console.log('opened cache');
-      return cache.addAll(urlsTocache);
+    caches.open(current_caches['prefetch']).then(function(cache) {
+      cache.addAll(urlsTocache.map(function(urlsTocache){
+        return new Request(urlsTocache,{mode:'no-cors'});
+      })).then(function(){
+        console.log('All resources have been fetched and cached.');
+      })
+    }).catch(function(error){
+      console.error('prefetch failed',error);
     })
   )
 })
