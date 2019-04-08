@@ -8,7 +8,7 @@ self.addEventListener('install',function(event) {
   event.waitUntil(
     caches.open(current_caches['prefetch']).then(function(cache) {
       cache.addAll(urlsTocache.map(function(urlsTocache){
-        return new Request(urlsTocache,{mode:'no-cors'});
+        return new Request(urlsTocache);
       })).then(function(){
         console.log('All resources have been fetched and cached.');
       })
