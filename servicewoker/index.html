@@ -13,6 +13,11 @@
 		if('serviceWorker' in navigator){
 			navigator.serviceWorker.register('sw.js').then(function (reg) {
 				console.log('registration successed.scope is'+ reg.scope);
+				if(serviceWorker.installing){
+					console.log('install')
+				}else if(serviceWorker.waiting){
+					console.log('waiting');
+				}
 			}).catch(function (error) {
 				console.log('Registration failed with' + error);
 			})
