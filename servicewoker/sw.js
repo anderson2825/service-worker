@@ -17,9 +17,9 @@ self.addEventListener('activate',function(event){
 						return caches.delete(cacheName);
 					}
 				})
-			)
+			);
 		})
-	)
+	);
 })
 
 
@@ -32,8 +32,7 @@ self.addEventListener('fetch',function (event) {
 					console.log('found response in cache:',response);
 					return response;
 				}
-
-			}).catch(function(err){
+ 			}).catch(function(err){
 				console.error('error in fetch handler:',err);
 				throw err;
 			})
