@@ -4,7 +4,7 @@ var current_caches = {
 }
 
 self.addEventListener('install',function(event) {
-  var  urlsTocache = ['','en/image/ban1.jpg','en/image/ban2.jpg','en/image/ban3.jpg'];
+  var  urlsTocache = ['','en/image/ban1.jpg','en/image/ban2.jpg','en/image/ban3.jpg','en/script/main.js','en/style/main.css'];
   event.waitUntil(
     caches.open(current_caches['prefetch']).then(function(cache) {
       cache.addAll(urlsTocache.map(function(urlsTocache){
