@@ -9,7 +9,7 @@ self.addEventListener('activate',function(event){
 	})
 
 	event.waitUntil(
-		caches.keys().then(function(cacheNames)){
+		caches.keys().then(function(cacheNames){
 			return Promise.all(
 				cacheNames.map(function(cacheName){
 					if(expecatedCacheNames.indexOf(cacheName)== -1){
