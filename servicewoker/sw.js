@@ -1,6 +1,6 @@
 var cache_version = 1;
 var current_caches = {
-	font: 'font-cache-v' + cache_version;
+	font: 'font-cache-v' + cache_version
 };
 
 self.addEventListener('activate',function(event){
