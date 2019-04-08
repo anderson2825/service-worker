@@ -26,7 +26,7 @@ self.addEventListener('activate',function(event){
 self.addEventListener('fetch',function (event) {
 	console.log('handling fetch event for',event.request.url);
 	event.respondWith(
-		caches.open(current_caches['font']).then(function(){
+		caches.open(current_caches['font']).then(function(cache){
 			return cache.match(event.request).then(function(response){
 				if(response){
 					console.log('found response in cache:',response);
