@@ -1,6 +1,6 @@
 var cache_version = 1;
 var current_caches = {
-  prefetch:'prefetch-cache-v' + cache_version;
+  prefetch:'prefetch-cache-v' + cache_version
 }
 
 self.addEventListener('install',function(event) {
