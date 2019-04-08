@@ -18,6 +18,24 @@ self.addEventListener('install',function(event) {
   )
 })
 
+self.addEventListener('activate',function(event){
+  var expecatedCacheNames = Object.keys(current_caches).map(function(key){
+    return current_caches[key];
+  })
+  event.waitUntil(
+    caches.keys().then(function(cacheNames){
+      return Promise.all(
+        cacheNames.map(function(cacheName){
+          if(expecatedCacheNames.indexOf(cacheName == -1)){
+            console.log('Deleting out of date cache',cacheName);
+            return caches.delete(cacheName);
+          }
+        })
+      )
+    })
+  )
+})
+
 /*self.addEventListener('fetch',function(event) {
   event.respondWith(
     cache.match(event.request).then(function(response) {
