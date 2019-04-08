@@ -1,4 +1,4 @@
-var cache_version = 1;
+var cache_version = 2;
 var current_caches = {
   prefetch:'prefetch-cache-v' + cache_version
 }
