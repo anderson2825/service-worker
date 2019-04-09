@@ -5,6 +5,14 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
+self.addEventsListener('install',function(){
+	self.skipWaiting();
+})
+
+self.addEventsListener('actived',function(){
+	self.clientsClaim();
+})
+
 var matchFun =function (url,event) {
 	console.log(url,event);
 	return (url.pathname === '/service-worker/workbox2/js/index.js');
@@ -43,5 +51,5 @@ workbox.routing.registerRoute(
 		],
 	}),
 );
-workbox.core.skipWaiting();
-workbox.core.clientsClaim();
+/*workbox.core.skipWaiting();
+workbox.core.clientsClaim();*/
