@@ -8,6 +8,7 @@ if (workbox) {
 var matchFun =function (url,event) {
 //	return url;
 	console.log(url,event);
+	return false;
 }
  
 workbox.core.setCacheNameDetails({
