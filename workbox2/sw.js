@@ -24,7 +24,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-	new RegExp('/\.(?:png|gif|jpg|jpeg|svg)$/'),
+	/\.(?:png|gif|jpg|jpeg|svg)$/,
 	new workbox.strategies.CacheFirst({
 		cacheName:'images',
 		plugins:[
