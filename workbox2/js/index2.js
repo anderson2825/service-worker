@@ -1,0 +1,1 @@
+console.log('index2222.js');
