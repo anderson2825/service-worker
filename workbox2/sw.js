@@ -7,7 +7,7 @@ if (workbox) {
 
 workbox.core.setCacheNameDetails({
 	prefix:'my-app',
-	suffix:'v1',
+	suffix:'v2',
 	precache:'install-time',
 	runtime:'run-time'
 })
