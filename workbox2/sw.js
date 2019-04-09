@@ -23,7 +23,7 @@ workbox.precaching.precacheAndRoute([
 	{url:'index.html',revision:'385554'},
 ])
 workbox.routing.registerRoute(
-	matchFun,
+	matchFun(),
 	new RegExp('.*\.js'),
 	new workbox.strategies.NetworkFirst({
 		cacheName:'my-js-cache',
