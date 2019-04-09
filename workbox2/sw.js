@@ -4,12 +4,15 @@ if (workbox) {
 } else {
   console.log(`Boo! Workbox didn't load 😬`);
 }
-
+self.addEventLinstener('install',function(){
+	self.skipWaiting();
+})
 var matchFun =function (url,event) {
 	console.log(url,event);
 	return (url.pathname === '/service-worker/workbox2/js/index.js');
 }
- 
+
+
 workbox.core.setCacheNameDetails({
 	prefix:'my-app',
 	suffix:'v4',
