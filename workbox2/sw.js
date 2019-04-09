@@ -5,6 +5,11 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
+function matchFun(url,event) {
+//	return url;
+	console.log(url,event);
+}
+matchFun();
 workbox.core.setCacheNameDetails({
 	prefix:'my-app',
 	suffix:'v2',
