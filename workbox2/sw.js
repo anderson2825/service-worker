@@ -17,8 +17,8 @@ workbox.core.setCacheNameDetails({
 	precache:'install-time',
 	runtime:'run-time'
 });
-workbox.skipWaiting();
-workbox.clientsClaim();
+workbox.core.skipWaiting();
+workbox.core.clientsClaim();
 workbox.precaching.precacheAndRoute([
 	'css/index.css',
 	{url:'index.html',revision:'385554'},
