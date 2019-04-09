@@ -9,8 +9,7 @@ workbox.core.setCacheNameDetails({
 	prefix:'my-app',
 	suffix:'v1',
 	precache:'install-time',
-	runtime:'run-time',
-	googleAnalytics:'ga'
+	runtime:'run-time'
 })
 
 workbox.precaching.precacheAndRoute([
