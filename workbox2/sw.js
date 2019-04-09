@@ -18,5 +18,20 @@ workbox.precaching.precacheAndRoute([
 ])
 workbox.routing.registerRoute(
 	new RegExp('.*\.js'),
-	new workbox.strategies.NetworkFirst()
+	new workbox.strategies.NetworkFirst({
+		cacheName:'my-js-cache',
+	})
+);
+
+workbox.routing.registerRoute(
+	new RegExp('/\.(?:png|gif|jpg|jpeg|svg)$/'),
+	new workbox.strategies.CacheFirst({
+		cacheName:'images',
+		plugins:[
+			new workbox.expiration.Plugin({
+				maxEntries:60,
+				maxAgeSeconds:30*24*60*60,
+			})
+		],
+	}),
 )
