@@ -10,7 +10,7 @@ self.addEventListener('install',function(event){
 })
 
 self.addEventListener('activate',function(event){
-	self.clientsClaim();
+	clients.claim();
 })
 
 var matchFun =function (url,event) {
