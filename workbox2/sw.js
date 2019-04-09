@@ -5,6 +5,10 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
+workbox.precaching.precacheAndRoute([
+	'css/index.css',
+	{url:'index.html',revision:'385554'},
+])
 workbox.routing.registerRoute(
 	new RegExp('.*\.js'),
 	new workbox.strategies.NetworkFirst()
