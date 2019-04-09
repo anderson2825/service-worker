@@ -5,11 +5,11 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
-self.addEventsListener('install',function(){
+self.addEventListener('install',function(event){
 	self.skipWaiting();
 })
 
-self.addEventsListener('actived',function(){
+self.addEventListener('activate',function(event){
 	self.clientsClaim();
 })
 
