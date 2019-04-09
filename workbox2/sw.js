@@ -13,7 +13,7 @@ var matchFun =function (url,event) {
 
 workbox.core.setCacheNameDetails({
 	prefix:'my-app',
-	suffix:'v5',
+	suffix:'v77',
 	precache:'install-time',
 	runtime:'run-time'
 });
