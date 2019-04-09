@@ -6,14 +6,13 @@ if (workbox) {
 }
 
 var matchFun =function (url,event) {
-//	return url;
 	console.log(url,event);
 	return (url.pathname === '/service-worker/workbox2/js/index.js');
 }
  
 workbox.core.setCacheNameDetails({
 	prefix:'my-app',
-	suffix:'v2',
+	suffix:'v4',
 	precache:'install-time',
 	runtime:'run-time'
 })
@@ -22,6 +21,7 @@ workbox.precaching.precacheAndRoute([
 	'css/index.css',
 	{url:'index.html',revision:'385554'},
 ])
+
 workbox.routing.registerRoute(
 	matchFun,
 	/*new RegExp('.*\.js'),*/
