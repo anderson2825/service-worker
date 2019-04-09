@@ -5,13 +5,13 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
-self.addEventListener('install',function(event){
+/*self.addEventListener('install',function(event){
 	self.skipWaiting();
 })
 
 self.addEventListener('activate',function(event){
 	clients.claim();
-})
+})*/
 
 var matchFun =function (url,event) {
 	console.log(url,event);
@@ -25,6 +25,9 @@ workbox.core.setCacheNameDetails({
 	precache:'install-time',
 	runtime:'run-time'
 });
+
+workbox.core.skipWaiting();
+workbox.core.clientsClaim();
 
 workbox.precaching.precacheAndRoute([
 	'css/index.css',
@@ -51,5 +54,4 @@ workbox.routing.registerRoute(
 		],
 	}),
 );
-/*workbox.core.skipWaiting();
-workbox.core.clientsClaim();*/
+
