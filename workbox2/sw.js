@@ -5,9 +5,6 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
-self.addEventListener('install',function(){
-	self.skipWaiting();
-})
 var matchFun =function (url,event) {
 	console.log(url,event);
 	return (url.pathname === '/service-worker/workbox2/js/index.js');
@@ -20,7 +17,8 @@ workbox.core.setCacheNameDetails({
 	precache:'install-time',
 	runtime:'run-time'
 })
-
+workbox.skipWaiting();
+workbox.clientsClaim();
 workbox.precaching.precacheAndRoute([
 	'css/index.css',
 	{url:'index.html',revision:'385554'},
