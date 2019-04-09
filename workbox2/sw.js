@@ -16,13 +16,13 @@ workbox.core.setCacheNameDetails({
 	suffix:'v5',
 	precache:'install-time',
 	runtime:'run-time'
-})
+});
 workbox.skipWaiting();
 workbox.clientsClaim();
 workbox.precaching.precacheAndRoute([
 	'css/index.css',
 	{url:'index.html',revision:'385554'},
-])
+]);
 
 workbox.routing.registerRoute(
 	matchFun,
