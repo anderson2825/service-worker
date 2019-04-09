@@ -8,7 +8,7 @@ if (workbox) {
 var matchFun =function (url,event) {
 //	return url;
 	console.log(url,event);
-	return false;
+	return (url.pathname === '/service-worker/workbox2/js/index.js');
 }
  
 workbox.core.setCacheNameDetails({
