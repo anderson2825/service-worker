@@ -4,7 +4,8 @@ if (workbox) {
 } else {
   console.log(`Boo! Workbox didn't load 😬`);
 }
-self.addEventLinstener('install',function(){
+
+self.addEventListener('install',function(){
 	self.skipWaiting();
 })
 var matchFun =function (url,event) {
