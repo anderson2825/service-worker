@@ -24,7 +24,7 @@ workbox.precaching.precacheAndRoute([
 ])
 workbox.routing.registerRoute(
 	matchFun(),
-	new RegExp('.*\.js'),
+	/*new RegExp('.*\.js'),*/
 	new workbox.strategies.NetworkFirst({
 		cacheName:'my-js-cache',
 	})
