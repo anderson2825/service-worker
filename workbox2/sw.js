@@ -5,6 +5,14 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
+workbox.core.setCatcheNameDetails({
+	prefix:'my-app',
+	suffix:'v1',
+	precache:'install-time',
+	runtime:'run-time',
+	googleAnalytics:'ga'
+})
+
 workbox.precaching.precacheAndRoute([
 	'css/index.css',
 	{url:'index.html',revision:'385554'},
