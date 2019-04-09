@@ -23,7 +23,7 @@ workbox.precaching.precacheAndRoute([
 	'css/index.css',
 	{url:'index.html',revision:'385554'},
 ],{
-	ignoreURLParmetersMatching:[/.*/]
+	ignoreURLParametersMatching:[/.*/]
 });
 
  
