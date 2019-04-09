@@ -5,11 +5,11 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
-function matchFun(url,event) {
+var matchFun =function (url,event) {
 //	return url;
 	console.log(url,event);
 }
-matchFun();
+ 
 workbox.core.setCacheNameDetails({
 	prefix:'my-app',
 	suffix:'v2',
@@ -22,6 +22,7 @@ workbox.precaching.precacheAndRoute([
 	{url:'index.html',revision:'385554'},
 ])
 workbox.routing.registerRoute(
+	matchFun,
 	new RegExp('.*\.js'),
 	new workbox.strategies.NetworkFirst({
 		cacheName:'my-js-cache',
