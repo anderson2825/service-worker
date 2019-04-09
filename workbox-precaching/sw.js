@@ -5,13 +5,7 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
-/*self.addEventListener('install',function(event){
-	self.skipWaiting();
-})
-
-self.addEventListener('activate',function(event){
-	clients.claim();
-})*/
+ 
 
  
 
@@ -21,10 +15,12 @@ self.addEventListener('activate',function(event){
 workbox.precaching.precacheAndRoute([
 	'js/index.js',
 	'css/index.css',
-	{url:'index.html',revision:'385554'},
-],{
-	ignoreURLParametersMatching:[/.*/]
-});
+	{url:'index.html?key2=2',revision:'385554'},
+]);
+
+/*,{
+	ignoreURLParametersMatching:[/.*]
+}*/
 
  
 
