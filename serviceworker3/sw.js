@@ -47,6 +47,7 @@ function stashInCache(request, response, cacheName, maxItems) {
         cache.keys()
         .then(keys => {
             if (keys.length > maxItems) {
+                console.log(keys.length,maxItems);
                 cache.delete(keys[0]);
             }
         });
