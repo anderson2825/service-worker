@@ -4,7 +4,7 @@ const version = 'v1.28::';
 const staticCacheName = version + 'static';
 const pagesCacheName = 'pages';
 const imagesCacheName = 'images';
-const maxPages = 50; // Maximum number of pages to cache
+const maxPages = 30; // Maximum number of pages to cache
 const maxImages = 20; // Maximum number of images to cache
 const timeout = 2000; // Number of milliseconds before timing out
 
