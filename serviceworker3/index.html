@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<h2>service worker</h2>
+	<script type="text/javascript">
+		if('serviceWorker' in navigator){
+			window.load=function() {
+				serviceWorker.navigator.register('sw.js').then(function(reg){
+					console.log('serviceWorker successed.scope is' + reg.scope);
+				}).cache(function(err){
+					console.log('serviceWorker register failed' + err)
+
+				})
+			}
+ 		}
+	</script>
+</body>
+</html>
