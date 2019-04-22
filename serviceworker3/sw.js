@@ -5,7 +5,7 @@ const staticCacheName = version + 'static';
 const pagesCacheName = 'pages';
 const imagesCacheName = 'images';
 const maxPages = 50; // Maximum number of pages to cache
-const maxImages = 100; // Maximum number of images to cache
+const maxImages = 20; // Maximum number of images to cache
 const timeout = 2000; // Number of milliseconds before timing out
 
 const cacheList = [
@@ -47,7 +47,6 @@ function stashInCache(request, response, cacheName, maxItems) {
         cache.keys()
         .then(keys => {
             if (keys.length > maxItems) {
-                console.log(keys.length,maxItems);
                 cache.delete(keys[0]);
             }
         });
@@ -147,7 +146,8 @@ addEventListener('fetch', event => {
                     const copy = responseFromFetch.clone();
                     try {
                         event.waitUntil(
-                            stashInCache(request, copy, imagesCacheName, maxImages)
+                            stashInCache(request, copy, imagesCacheName, maxImages);
+                            console.log(maxImages);
                         );
                     } catch (error) {
                         console.error(error);
