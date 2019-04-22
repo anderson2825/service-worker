@@ -11,15 +11,12 @@
 	<h2>service worker</h2>
 	<script type="text/javascript">
 		if('serviceWorker' in navigator){
-			window.load=function() {
-				navigator.serviceWorker.register('sw.js').then(function(reg){
-					console.log('serviceWorker successed.scope is' + reg.scope);
+			navigator.serviceWorker.register('sw.js').then(function(reg){
+				console.log('serviceWorker successed.scope is' + reg.scope);
 				}).cache(function(err){
 					console.log('serviceWorker register failed' + err)
-
 				})
-			}
- 		}
+		}
 	</script>
 </body>
 </html>
