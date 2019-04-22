@@ -146,8 +146,7 @@ addEventListener('fetch', event => {
                     const copy = responseFromFetch.clone();
                     try {
                         event.waitUntil(
-                            stashInCache(request, copy, imagesCacheName, maxImages);
-                            console.log(maxImages);
+                            stashInCache(request, copy, imagesCacheName, maxImages)
                         );
                     } catch (error) {
                         console.error(error);
