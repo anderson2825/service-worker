@@ -13,7 +13,7 @@
 		if('serviceWorker' in navigator){
 			navigator.serviceWorker.register('sw.js').then(function(reg){
 				console.log('serviceWorker successed.scope is' + reg.scope);
-				}).cache(function(err){
+				}).catch(function(err){
 					console.log('serviceWorker register failed' + err)
 				})
 		}
